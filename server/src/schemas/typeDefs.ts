@@ -23,6 +23,7 @@ type Query{
 type Mutation{
     createUser(username: String, email: String, password: String): User
     saveBook(description: String, bookId: String, title: String) : User
+    deleteBook(bookId: String): User
     login(username: String, email: String): User
 }
 
