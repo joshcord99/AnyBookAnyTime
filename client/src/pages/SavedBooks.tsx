@@ -1,14 +1,14 @@
 import { useQuery, useMutation } from '@apollo/client';
 import { Container, Card, Button, Row, Col } from 'react-bootstrap';
-import { GET_ME } from '../utils/queries';
+import { GET_SINGLE_USER } from '../utils/queries';
 import { REMOVE_BOOK } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
 
 const SavedBooks = () => {
-  const { loading, data } = useQuery(GET_ME);
+  const { loading, data } = useQuery(GET_SINGLE_USER);
   const [removeBook] = useMutation(REMOVE_BOOK, {
-    refetchQueries: [{ query: GET_ME }], // Automatically refetch user data after mutation
+    refetchQueries: [{ query: GET_SINGLE_USER }], // Automatically refetch user data after mutation
   });
 
   const userData = data?.me || { savedBooks: [] };

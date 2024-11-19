@@ -10,19 +10,18 @@ const resolvers = {
           { username: args.username },
         ],
       });
-
+    
       if (!foundUser) {
-        return null;
+        throw new Error("User not found");
       }
-
+    
       return foundUser;
     },
-  },
+  },    
 
   Mutation: {
     createUser: async (_parent: any, args: any) => {
       const user = await User.create(args);
-
       if (!user) {
         return null;
       }
@@ -31,7 +30,7 @@ const resolvers = {
     },
     login: async (_parent: any, args: any) => {
       const user = await User.findOne({
-        $or: [{ username: args.username }, { email: args.email }],
+        $or: [{ password: args.password }, { email: args.email }],
       });
       if (!user) {
         return null;
