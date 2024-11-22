@@ -37,7 +37,7 @@ const SignupForm = ({ handleModalClose }: { handleModalClose: () => void }) => {
         variables: { ...userFormData },
       });
 
-      const token = data.addUser.token;
+      const token = data.createUser.token;
       Auth.login(token);
 
       if (handleModalClose) {
