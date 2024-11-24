@@ -1,5 +1,5 @@
 # AnyBookAnyTime
-![Project Demo](path-to-your-gif-or-image)
+![Project Demo](https://github.com/joshcord99/AnyBookAnyTime/blob/main/client/src/assets/Screenshot%202024-11-24%20at%201.04.21%E2%80%AFAM.png)
 
 ## Description
 AnyBookAnyTime is a Google Books search engine refactored to use GraphQL and Apollo Server. Built with the MERN stack (MongoDB, Express.js, React, and Node.js), this application allows users to search for books, save them to a personal list, and manage their saved books with an intuitive interface.
